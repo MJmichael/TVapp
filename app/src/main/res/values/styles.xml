@@ -1,0 +1,14 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+
+    <!-- Application theme. -->
+
+    <style name="textstyle">
+        <item name="android:textSize">20dp</item>
+        <item name="android:paddingTop">20dp</item>
+    </style>
+</resources>

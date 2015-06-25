@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:background="#84C1FF"
+    android:layout_height="match_parent" >
+
+    <com.jess.ui.TwoWayGridView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listView_AllApp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        app:cacheColorHint="#E8E8E8"
+        app:columnWidth="300dp"
+        app:gravity="center"
+        app:horizontalSpacing="2dp"
+        app:numColumns="3"
+        app:numRows="2"
+        app:rowHeight="250dp"
+        app:scrollDirectionLandscape="horizontal"
+        app:scrollDirectionPortrait="horizontal"
+        app:stretchMode="spacingWidthUniform"
+        app:verticalSpacing="2dp" >
+    </com.jess.ui.TwoWayGridView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp"
+        android:text="咨询"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

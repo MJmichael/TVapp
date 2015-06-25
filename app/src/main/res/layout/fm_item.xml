@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/iv_state"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/iv_music"
+        android:padding="4dip"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/mp_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/but_focus"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="和心"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mp_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/mp_name"
+            android:layout_alignRight="@+id/mp_name"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/mp_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/mp_current"
+            android:layout_alignBottom="@id/mp_current"
+            android:text="/00:00"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" /> 
+    </RelativeLayout>
+
+</LinearLayout>

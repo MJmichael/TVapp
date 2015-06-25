@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+     android:background="#84C1FF"
+    android:layout_height="match_parent" >
+
+
+    <com.jess.ui.TwoWayGridView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/video_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="80dp"
+        app:cacheColorHint="#E8E8E8"
+        app:columnWidth="400dp"
+        app:gravity="center"
+        app:horizontalSpacing="2dp"
+        app:numColumns="auto_fit"
+        app:numRows="2"
+        app:rowHeight="300dp"
+        app:scrollDirectionLandscape="horizontal"
+        app:scrollDirectionPortrait="horizontal"
+        app:stretchMode="spacingWidthUniform"
+        app:verticalSpacing="2dp" >
+    </com.jess.ui.TwoWayGridView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="视频"
+        android:textSize="20sp" />
+
+</FrameLayout>

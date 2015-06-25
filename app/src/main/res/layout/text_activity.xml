@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#84C1FF"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="30dp"
+        android:textSize="20dp"
+        android:paddingRight="30dp"
+        android:text="心晴基于成熟的云计算技术、移动互联网技术以及运营商通信技术，为用户提供一站式心理健康全程服务，打造国内心理健康第一道防线。它是一款自助化的生活健康服务产品，能帮助用户自检自测生活健康指数和生活质量，及早发现自身的心理亚健康状态，通过心理与健康常识辅导、在线咨询、专家辅导等多种形式，及时进行自我疏导、心理解压、调节心情，提升幸福感。我们为用户提供：最暖心的FM：拂去内心的浮躁，陪你度过精彩每一天；最专业的团队：专业的心理咨询师团队，丰富的经验和完善的心理治疗方案，使咨询者在情感、职业、生活、婚姻、亲子各方面都得到最专业的心理治疗。最出彩的测试：如果你想得到最专业的心理测试，这里是你最好的选择。如果你想找好玩的测试，这里更是应有尽有。
+心晴整合了线下分散在各处的心理咨询师资源，以标准的服务形式，通过云中心加客户端的模式，为用户提供端到端的心理健康服务。
+心晴客户端-可以带走的心理专家团 " />
+
+</RelativeLayout>

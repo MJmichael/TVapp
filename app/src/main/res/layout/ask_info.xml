@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:background="@color/them_bg" >
+
+    <com.example.tvapp.view.JRoundRectImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/a" />
+
+    <LinearLayout
+        android:id="@+id/ll_befo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ImageView01"
+        android:layout_marginLeft="77dp"
+        android:layout_toRightOf="@+id/ImageView01"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="专家: " />
+
+        <TextView
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="年龄: " />
+
+        <TextView
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="级别: " />
+
+        <TextView
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="咨询费用: " />
+
+        <TextView
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会员费用: " />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_after"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ImageView01"
+        android:layout_marginLeft="77dp"
+        android:layout_toRightOf="@id/ll_befo"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="何晓松" />
+
+        <TextView
+            android:id="@+id/tv_age"
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="30" />
+
+        <TextView
+            android:id="@+id/tv_jibie"
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="二级心理咨询师" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="300/次 " />
+
+        <TextView
+            android:id="@+id/tv_vipprice"
+            style="@style/textstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200/次 " />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ll_after"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/ll_after"
+        android:text="主攻方向 "
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ll_befo"
+        android:layout_alignTop="@+id/imageView1"
+        android:text="基本信息"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ll_after"
+        android:layout_below="@+id/textView2"
+        android:layout_marginRight="8dp"
+        android:paddingRight="5dp"
+        android:text="一日，我与上帝一同出行。 路过一条河时，我看到水里有一个人在挣扎，我指着那个人问：“上帝，为什么你不去救那个人，难道他没有向你祈祷吗？”上帝回答：“不，他向我祈祷了两次，但我也救了他两次——第一次我让一根圆木从他身边漂过，他没有去抓。第二次我让一个人划着竹筏从他身边经过，他又不肯去抓那个人向他伸出的手。你让我怎样去救他，难道非得我亲手去把他拉上来？”我哑口无言。 "
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ll_befo"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="90dp"
+        android:gravity="right"
+        android:src="@drawable/iv_two_pic" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/ll_befo"
+        android:layout_marginTop="30dp"
+        android:text="扫描二维码下载手机APP"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_goodat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="18dp"
+        android:text="亲子教育、家庭关系."
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView6"
+        android:layout_alignLeft="@+id/textView7"
+        android:text="扫描屏幕二维码即可与咨询师交流"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView5"
+        android:layout_alignLeft="@+id/tv_goodat"
+        android:layout_marginBottom="27dp"
+        android:text="二级咨询师"
+        android:textSize="20dp" />
+
+</RelativeLayout>
