@@ -18,7 +18,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#84C1FF"
+    android:background="@drawable/index_bg"
     android:orientation="vertical">
     <!--android:background="#84C1FF"-->
     <RelativeLayout
