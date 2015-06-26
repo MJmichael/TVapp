@@ -1,10 +1,8 @@
 package com.example.tvapp.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.view.View;
 
 import com.example.tvapp.R;
@@ -19,10 +17,13 @@ import com.google.gson.reflect.TypeToken;
 import com.jess.ui.TwoWayAdapterView;
 import com.jess.ui.TwoWayGridView;
 import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.view.annotation.ContentView;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,8 +31,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+@ContentView(R.layout.video_gridview)
 public class VideoActivity extends BaseActivity {
-
+    @ViewInject(R.id.video_gridview)
     private TwoWayGridView gridView;
     private VideoAdapter myAdapter;
     private Context context;
@@ -39,16 +41,6 @@ public class VideoActivity extends BaseActivity {
     private List<Video> videoList;
     private Intent intent;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        context = this;
-        setContentView(R.layout.video_gridview);
-
-
-
-
-    }
 
     @Override
     protected void initListener() {
@@ -79,7 +71,9 @@ public class VideoActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        gridView = (TwoWayGridView) findViewById(R.id.video_gridview);
+
+        ViewUtils.inject(this);
+        context = this;
     }
 
     @Override

@@ -25,11 +25,14 @@ import com.example.tvapp.utils.ProgressDlgUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.view.annotation.ContentView;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 /**
  * @version V1.0
@@ -39,6 +42,7 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
  * @创建时间：2015-6-4 下午12:10:00
  * @备注：
  */
+@ContentView(R.layout.psy_test_list_activity)
 public class PsyTestInfoActivity extends BaseActivity {
 
     private ListView lv_test;
@@ -54,15 +58,6 @@ public class PsyTestInfoActivity extends BaseActivity {
     private int content = 0;
     private String sum;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.psy_test_list_activity);
-
-        examid = getIntent().getStringExtra("examid");
-        classname = getIntent().getStringExtra("classname");
-
-    }
 
     @Override
     protected void initListener() {
@@ -71,6 +66,8 @@ public class PsyTestInfoActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        examid = startIntent.getStringExtra("examid");
+        classname = startIntent.getStringExtra("classname");
         QuesList = new ArrayList<ExamQues>();
         Result = new ExamResult();
         ProgressDlgUtil.showProgressDlg("加载中...", PsyTestInfoActivity.this);
@@ -153,6 +150,7 @@ public class PsyTestInfoActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        ViewUtils.inject(this);
         tv_test = (TextView) findViewById(R.id.tv_test);
         lv_test = (ListView) findViewById(R.id.lv_test);
         lv_test.setItemsCanFocus(true);

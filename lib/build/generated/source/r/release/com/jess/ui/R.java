@@ -209,7 +209,8 @@ containing a value of this type.
     }
     public static final class drawable {
         public static int icon=0x7f020000;
-        public static int spinner_black_76=0x7f020001;
+        public static int index_bg=0x7f020001;
+        public static int spinner_black_76=0x7f020002;
     }
     public static final class id {
         public static int alwaysScroll=0x7f04000e;
@@ -238,9 +239,6 @@ containing a value of this type.
     }
     public static final class layout {
         public static int main=0x7f030000;
-    }
-    public static final class string {
-        public static int app_name=0x7f050000;
     }
     public static final class styleable {
         /** Attributes that can be used with a TwoWayAbsListView.

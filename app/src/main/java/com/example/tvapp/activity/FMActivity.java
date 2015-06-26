@@ -29,11 +29,14 @@ import com.example.tvapp.utils.TVPlayer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.view.annotation.ContentView;
 
+@ContentView(R.layout.fm_activity)
 public class FMActivity extends BaseActivity implements OnCompletionListener {
 
     private ListView lv_fm;
@@ -42,12 +45,6 @@ public class FMActivity extends BaseActivity implements OnCompletionListener {
     private TVPlayer player;
     private int playposition = -1;// 记录上次点击的是哪个播放
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fm_activity);
-        Vitamio.initialize(this);// 必须初始化这个
-    }
 
     @Override
     protected void initListener() {
@@ -56,6 +53,8 @@ public class FMActivity extends BaseActivity implements OnCompletionListener {
 
     @Override
     protected void initView() {
+        ViewUtils.inject(this);
+        Vitamio.initialize(this);// 必须初始化这个
         lv_fm = (ListView) findViewById(R.id.lv_fm);
     }
 

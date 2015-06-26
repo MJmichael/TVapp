@@ -20,7 +20,10 @@ import android.widget.TextView;
 
 import com.example.tvapp.R;
 import com.example.tvapp.api.TVUrl;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ContentView;
 
+@ContentView(R.layout.play_video_activity)
 public class VideoInfoActivity extends BaseActivity {
 
     private String path = "http://www.114xinqing.com/obar//video//animation//Oktapod.mp4";
@@ -55,10 +58,6 @@ public class VideoInfoActivity extends BaseActivity {
         super.onCreate(icicle);
         if (!io.vov.vitamio.LibsChecker.checkVitamioLibs(this))
             return;
-
-        setContentView(R.layout.play_video_activity);
-
-
     }
 
     @Override
@@ -68,6 +67,7 @@ public class VideoInfoActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        ViewUtils.inject(this);
         path = TVUrl.DefUrl + getIntent().getStringExtra("url");
         path = path.replaceAll(" ", "%20");
         mVideoView = (VideoView) findViewById(R.id.surface_view);

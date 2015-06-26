@@ -19,10 +19,13 @@ import com.google.gson.reflect.TypeToken;
 import com.jess.ui.TwoWayAdapterView;
 import com.jess.ui.TwoWayGridView;
 import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.view.annotation.ContentView;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,23 +44,16 @@ import static com.jess.ui.TwoWayAdapterView.OnItemClickListener;
  * @备注：      
  * @version V1.0
  */
+@ContentView(R.layout.ask_gridview)
 @SuppressLint("SimpleDateFormat")
 public class AskListActivity extends BaseActivity {
-
+	@ViewInject(R.id.listView_AllApp)
 	private TwoWayGridView gridView;
 	private AskAdapter myAdapter;
 	private Context context;
 	private List<Doctor> doclist;
 	private Intent intent;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		context = this;
-		setContentView(R.layout.ask_gridview);
-
-
-	}
 
 	@Override
 	protected void initListener() {
@@ -91,7 +87,7 @@ public class AskListActivity extends BaseActivity {
 
 	@Override
 	protected void initView() {
-		gridView = (TwoWayGridView) findViewById(R.id.listView_AllApp);
+		ViewUtils.inject(this);
 	}
 
 	@Override

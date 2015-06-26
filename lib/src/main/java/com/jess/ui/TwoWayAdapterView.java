@@ -43,11 +43,11 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.Adapter;
 
 
@@ -755,7 +755,7 @@ public abstract class TwoWayAdapterView<T extends Adapter> extends ViewGroup {
 			// Force one here to make sure that the state of the list matches
 			// the state of the adapter.
 			if (mDataChanged) {
-				this.layout(getLeft(), getTop(), getRight(), getBottom());
+				this.onLayout(false, getLeft(), getTop(), getRight(), getBottom());
 			}
 		} else {
 			if (mEmptyView != null) mEmptyView.setVisibility(View.GONE);

@@ -3,6 +3,8 @@ package com.example.tvapp.activity;
 import com.example.tvapp.R;
 import com.example.tvapp.fragment.ProPsyTest;
 import com.example.tvapp.fragment.OtherPsyTest;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ContentView;
 
 import android.app.Activity;
 import android.app.FragmentManager;
@@ -22,16 +24,12 @@ import android.widget.Button;
  * @备注：
  * @version V1.0
  */
+@ContentView(R.layout.psy_test_activity)
 public class PsyTestActivity extends BaseActivity implements OnClickListener {
 	private Button button01, button02, button03, button04;
 	private FragmentManager fm;
 	private FragmentTransaction ft;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.psy_test_activity);
-	}
 
 	@Override
 	protected void initListener() {
@@ -40,6 +38,7 @@ public class PsyTestActivity extends BaseActivity implements OnClickListener {
 
 	@Override
 	protected void initView() {
+		ViewUtils.inject(this);
 		button01 = (Button) findViewById(R.id.button01);
 		button02 = (Button) findViewById(R.id.button02);
 

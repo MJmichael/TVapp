@@ -1,15 +1,25 @@
 ECLIPSE ANDROID PROJECT IMPORT SUMMARY
 ======================================
 
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* ant.properties
+* build.xml
+* proguard-project.txt
+
 Moved Files:
 ------------
 Android Gradle projects use a different directory structure than ADT
 Eclipse projects. Here's how the projects were restructured:
 
-* AndroidManifest.xml => lib\src\main\AndroidManifest.xml
-* assets\ => lib\src\main\assets
-* res\ => lib\src\main\res\
-* src\ => lib\src\main\java\
+* AndroidManifest.xml => FancyCoverFlow\src\main\AndroidManifest.xml
+* assets\ => FancyCoverFlow\src\main\assets
+* res\ => FancyCoverFlow\src\main\res\
+* src\ => FancyCoverFlow\src\main\java\
 
 Next Steps:
 -----------

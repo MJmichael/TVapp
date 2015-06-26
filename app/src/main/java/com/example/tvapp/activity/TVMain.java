@@ -19,82 +19,49 @@ package com.example.tvapp.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.tvapp.R;
 import com.example.tvapp.adapter.ViewGroupExampleAdapter;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ContentView;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import at.technikum.mti.fancycoverflow.FancyCoverFlow;
-
+@ContentView(R.layout.main)
 public class TVMain extends BaseActivity implements OnClickListener {
 
     // =============================================================================
     // Child views
     // =============================================================================
-
+    @ViewInject(R.id.fancyCoverFlow)
     private FancyCoverFlow fancyCoverFlow;
 
     private ViewGroupExampleAdapter Myadapter;
-    private Button bt_ask;
 
-    private TextView tvTitle;
+    @ViewInject(R.id.bt_ask)
+    private Button bt_ask;
 
     // =============================================================================
     // Supertype overrides
     // =============================================================================
 
-    /**
-     * Called when the activity is first created.
-     */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
 
-
-    }
-
-    @Override
+   @Override
     protected void initListener() {
-        fancyCoverFlow.setOnItemSelectedListener(new OnItemSelectedListener() {
 
+
+        fancyCoverFlow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapter, View view, int position, long arg3) {
-                int count = adapter.getChildCount();
-                ViewGroup group = (ViewGroup) view;
-                int childCount = group.getChildCount();
-                for (int i = 0; i < count; i++) {
-
-                    adapter.getChildAt(i).setBackgroundDrawable(null);// 将所有的图片先去掉背景
-                }
-                View childAt = adapter.getChildAt(position);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-
-
-            }
-
-        });
-
-        bt_ask.setOnClickListener(this);
-
-        fancyCoverFlow.setOnItemClickListener(new OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                switch (arg2) {
+                switch (i) {
                     case 0:
 
                         intent = new Intent();
@@ -125,22 +92,21 @@ public class TVMain extends BaseActivity implements OnClickListener {
 
             }
         });
-        fancyCoverFlow.setOnItemClickListener(new OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            }
-        });
-
-        Drawable drawable = getResources().getDrawable(R.drawable.state_focus);
 
 
     }
 
-    @Override
+   @Override
     protected void initView() {
-        bt_ask = (Button) findViewById(R.id.bt_ask);
-        this.fancyCoverFlow = (FancyCoverFlow) this.findViewById(R.id.fancyCoverFlow);
+        ViewUtils.inject(this);
+
+    }
+
+    @Override
+    protected void initData() {
+        Myadapter = new ViewGroupExampleAdapter();
+        fancyCoverFlow.setAdapter(Myadapter);
         fancyCoverFlow.setReflectionEnabled(true);
         fancyCoverFlow.setReflectionRatio(0.3f);//反射 比例
         fancyCoverFlow.setReflectionGap(10);//反射间隙
@@ -153,20 +119,13 @@ public class TVMain extends BaseActivity implements OnClickListener {
         this.fancyCoverFlow.setScaleDownGravity(0.2f);// 下重力
         this.fancyCoverFlow.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
         fancyCoverFlow.setSelection(1);// 设置当前位置
-        this.fancyCoverFlow.setAdapter(Myadapter);
-
-    }
-
-    @Override
-    protected void initData() {
-        Myadapter = new ViewGroupExampleAdapter();
     }
 
 
     // =============================================================================
     // Private classes
     // =============================================================================
-
+    @OnClick(R.id.bt_ask)
     @Override
     public void onClick(View view) {
         Intent intent;
@@ -175,7 +134,6 @@ public class TVMain extends BaseActivity implements OnClickListener {
                 intent = new Intent(this, TextActivity.class);
                 startActivity(intent);
                 break;
-
             default:
                 break;
         }

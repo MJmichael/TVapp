@@ -93,6 +93,6 @@
     <orderEntry type="library" exported="" name="vitamio" level="project" />
     <orderEntry type="module" module-name="initActivity" exported="" />
     <orderEntry type="module" module-name="lib" exported="" />
-    <orderEntry type="module" module-name="library" exported="" />
+    <orderEntry type="module" module-name="FancyCoverFlow" exported="" />
   </component>
 </module>

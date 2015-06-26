@@ -16,11 +16,14 @@ import com.example.tvapp.utils.ProgressDlgUtil;
 import com.google.gson.Gson;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.view.annotation.ContentView;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 /**
  * @version V1.0
@@ -30,29 +33,19 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
  * @创建时间：2015-6-10 下午2:32:46
  * @备注：
  */
+@ContentView(R.layout.ask_info)
 public class AskActivity extends BaseActivity {
 
     private HttpUtils http;
     private ImageView iv_head;
     private TextView tv_name, tv_age, tv_jibie, tv_price, tv_vipprice, tv_goodat, tv_info;
     private String uid, age;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.ask_info);
-        http = new HttpUtils();
-        uid = getIntent().getStringExtra("uid");
-        age = getIntent().getStringExtra("age");
-    }
-
     @Override
     protected void initListener() {
-
     }
-
     @Override
     protected void initView() {
+        ViewUtils.inject(this);
         iv_head = (ImageView) findViewById(R.id.ImageView01);
         tv_name = (TextView) findViewById(R.id.tv_name);
         tv_age = (TextView) findViewById(R.id.tv_age);
@@ -66,6 +59,9 @@ public class AskActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        http = new HttpUtils();
+        uid =startIntent.getStringExtra("uid");
+        age =startIntent.getStringExtra("age");
         ProgressDlgUtil.showProgressDlg("加载中...", AskActivity.this);
         RequestParams params = new RequestParams();
         params.addQueryStringParameter("uid", uid);

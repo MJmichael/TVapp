@@ -1,6 +1,7 @@
 package com.example.tvapp.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
@@ -12,13 +13,17 @@ import android.view.WindowManager;
  */
 public abstract class BaseActivity extends Activity{
 
+    /**启动的Intent，默认在Activity中接收到Bundle，跳转前初始化*/
+    protected Intent startIntent;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);//隐藏标题
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置全屏
-
+        startIntent=getIntent();
         initView();
         initData();
         initListener();
